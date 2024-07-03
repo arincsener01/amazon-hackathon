@@ -1,0 +1,3 @@
+chatbot/chroma-db-docs/** filter=lfs diff=lfs merge=lfs -text
+chatbot/chroma-db-splitted-docs/** filter=lfs diff=lfs merge=lfs -text
+

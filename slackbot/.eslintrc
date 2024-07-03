@@ -1,0 +1,39 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "no-cond-assign": 0,
+        "no-unused-vars": 0,
+        "object-shorthand": [
+            2,
+            "always"
+        ],
+        "no-const-assign": 2,
+        "no-class-assign": 2,
+        "no-this-before-super": 2,
+        "no-var": 2,
+        "no-unreachable": 2,
+        "valid-typeof": 2,
+        "one-var": [
+            2,
+            "never"
+        ],
+        "prefer-const": [
+            2,
+            {
+                "destructuring": "all"
+            }
+        ],
+        "no-inner-declarations": 0,
+        "@typescript-eslint/no-unused-vars": "error",
+        "react/prop-types": "off",
+    }
+}
