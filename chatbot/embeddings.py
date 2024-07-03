@@ -9,6 +9,7 @@ LOCAL_PATH = r"c:\\Users\\sener\\OneDrive\\Masaüstü\\Javascript\\backend\\"
 PROJECT_DIRS = {
     "API-Project": f"{LOCAL_PATH}API-Project",
     # Add other projects here
+    
 }
 
 BLACKLIST_DIRS = ["**/dist/*", "**/node_modules/*", "**/build/*", "**/public/*"]
