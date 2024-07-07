@@ -1,9 +1,13 @@
 import os
 from chatbot.chatbot import Chatbot
-from flask import Flask, request
+from dotenv import load_dotenv
 
-OPENAI_KEY = "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"
+# Load environment variables from .env file
+load_dotenv()
+
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 os.environ["OPENAI_API_KEY"] = OPENAI_KEY
+
 
 # app = Flask(__name__)
 

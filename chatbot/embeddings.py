@@ -8,6 +8,7 @@ from langchain.vectorstores import Chroma
 LOCAL_PATH = r"c:\\Users\\sener\\OneDrive\\Masaüstü\\Javascript\\backend\\"
 PROJECT_DIRS = {
     "API-Project": f"{LOCAL_PATH}API-Project",
+    "Chat-Help-Center-main": f"{LOCAL_PATH}Chat-Help-Center-main"
     # Add other projects here
     
 }

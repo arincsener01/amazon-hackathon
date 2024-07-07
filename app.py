@@ -2,16 +2,21 @@ import streamlit as st
 from chatbot.chatbot import Chatbot
 from chatbot.embeddings import get_db
 import os
+from dotenv import load_dotenv
+import base64
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Set the OpenAI API key
-OPENAI_KEY = "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"
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 os.environ["OPENAI_API_KEY"] = OPENAI_KEY
 
 # List of available codebases
-available_codebases = ["API-Project"]
+available_codebases = ["API-Project", "Chat-Help-Center-main"]
 
 # Set up the Streamlit app
-st.title("Chat with Your Codebase")
+st.title("Arcane CodeAI")
 st.write("Ask questions about your codebase and get answers from the AI.")
 
 # Dropdown for selecting the codebase
@@ -39,8 +44,15 @@ if st.button("Get Answer"):
             
             st.write("### Answer")
             st.write(response['answer'])
+            
             st.write("### Related Documents")
-            st.write(response['related_docs'])
+            related_docs = response['related_docs'].split('\n')
+            for doc in related_docs:
+                # Create a link to open the file
+                file_path = os.path.join(os.path.expanduser('~'), doc)
+                encoded_path = base64.b64encode(file_path.encode()).decode()
+                href = f'- <a href="file:///{encoded_path}" target="_blank">{doc}</a>'
+                st.markdown(href, unsafe_allow_html=True)
         except Exception as e:
             st.error(f"An error occurred: {e}")
     else:
